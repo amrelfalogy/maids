@@ -1,0 +1,25 @@
+<div *ngIf="loading" class="loading" style="height: 100vh; text-align: center; align-items: center;">
+  <h1 style="font-weight: 100;">Loading User Details...</h1>
+</div>
+<div *ngIf="user && !loading" class="container user-details rounded">
+  <div class="row">
+    <div class="col-sm-4 img-container" >
+      <img [src]="user.avatar" class="rounded-circle" alt="...">
+      <h1>{{user.first_name}}</h1>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7 details-container" @slideIn>
+      <div class="header">
+        <p>about user</p>
+      </div>
+      <div class="details-content">
+        <p>{{user.first_name}} {{user.last_name}}</p>
+        <p>ID: {{user.id}}</p>
+        <p><span class="material-symbols-outlined">
+          mail
+          </span> Email: {{user.email}}</p>
+      </div>
+      <button class="btn btn-primary" (click)="goBack()">Back to Users List</button>
+    </div>
+  </div>
+</div>

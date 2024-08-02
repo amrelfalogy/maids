@@ -1,0 +1,25 @@
+<div class="container users-list rounded" @fadeIn>
+    <div *ngIf="isLoading" class="d-flex justify-content-center my-3">
+        <div class="spinner-border" role="status" style="color: rgb(29, 29, 29); margin: 50px;">
+            <span class="sr-only"> Loading...</span>
+        </div> 
+    </div>
+    <div class="users-existed" *ngIf="users.length > 0">
+        <div class="row user-cards">
+            <div class="card col-md-3" *ngFor="let user of users" @scaleIn (click)="viewDetails(user.id)">
+                <img [src]="user.avatar" class="card-img-top" alt="{{user.first_name}}" style="height: 100%;">
+                <div class="card-body">
+                    <p class="card-text">{{user.first_name}} {{user.last_name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pagination">
+                    <button mat-button (click)="previousPage()" class="btn " style="background-color: #ee972a; border: non; color: white;" [disabled]="currentPage === 1">Previous</button>
+                    <button mat-button (click)="nextPage()" class="btn btn-primary" [disabled]="currentPage === totalPages">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
