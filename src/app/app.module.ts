@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/headear/header.component'
 import { UsersListComponent } from './users/users-list/users-list.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { FooterComponent } from './layout/headear/footer/footer.component';
 
 @NgModule({
   declarations: [

@@ -33,13 +33,18 @@
 
 .card {
   margin-top: 30px;
-  width: 250px;
+  padding: 0;
+  width: 210px;
+  height: 240px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all ease-in-out 0.3s;
 }
 
 .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  border-color: #4468B0;
+  color: #4468B0;
 }
 
 .card-text {
