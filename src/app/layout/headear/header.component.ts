@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { SearchService } from '../services/search.service';
-import { User } from '../users/user.model';
-import { UserService } from '../services/user.service';
+import { SearchService } from '../../services/search.service';
+import { User } from '../../users/user.model';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 
@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(
-    private searchService: SearchService, 
-    private userService: UserService, 
+    private searchService: SearchService,
+    private userService: UserService,
     private router: Router
   ) { }
 
@@ -32,5 +32,8 @@ export class HeaderComponent implements OnInit {
       this.searchService.setSearchTerm(searchTerm.trim());
     });
   }
+
+  currentRoute = this.router.url;
+  disabled = this.currentRoute.includes('users-list');
 
 }

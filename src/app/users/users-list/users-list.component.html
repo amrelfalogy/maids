@@ -5,6 +5,10 @@
         </div> 
     </div>
     <div class="users-existed" *ngIf="users.length > 0">
+        <div class="heading" style="text-align: center; padding: 50px 0 25px;">
+            <span>meet our </span>
+            <h1>users list</h1>
+        </div>
         <div class="row user-cards">
             <div class="card col-md-3" *ngFor="let user of users" @scaleIn (click)="viewDetails(user.id)">
                 <img [src]="user.avatar" class="card-img-top" alt="{{user.first_name}}" style="height: 100%;">

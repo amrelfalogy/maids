@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { UserService } from '../services/user.service';
-import { User } from '../users/user.model';
+import { UserService } from '../../services/user.service';
+import { User } from '../user.model';
 import { Router } from '@angular/router';
-import { SearchService } from '../services/search.service';
+import { SearchService } from '../../services/search.service';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -36,8 +36,8 @@ export class UsersListComponent implements OnInit {
   isLoading: boolean = false;
 
   constructor(
-    private userService: UserService, 
-    private router: Router, 
+    private userService: UserService,
+    private router: Router,
     private searchService: SearchService,
   ) { }
 
